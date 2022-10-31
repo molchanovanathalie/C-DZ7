@@ -1,20 +1,30 @@
 ﻿// дать двумерный массив следующим правилом: Aₘₙ = m+n
-
-void PrintArray(int[,] array)
+void FillArray(int[,] matrix)
 {
-    for (int m = 0; m < array.GetLength(0); m++)
+    for (int m = 0; m < matrix.GetLength(0); m++)
     {
-        for (int n = 0; n < array.GetLength(1); n++)
+        for (int n = 0; n < matrix.GetLength(1); n++)
         {
-            array[m, n] = m + n;
-            Console.Write($"{array[m, n]} ");
+            matrix[m, n] = m + n;
+        }
+    }
+}
+void PrintArray(int[,] matrix)
+{
+    for (int m = 0; m < matrix.GetLength(0); m++)
+    {
+        for (int n = 0; n < matrix.GetLength(1); n++)
+        {
+            Console.Write($"{matrix[m, n]} ");
         }
         Console.WriteLine();
     }
 }
-int m = 8;
-int n = 8;
-int[,] array = new int[m, n];
+Console.WriteLine("Введите количество строк: ");
+int m = int.Parse(Console.ReadLine() ?? "0");
+Console.WriteLine("Введите количество столбцов: ");
+int n = int.Parse(Console.ReadLine()?? "0");
+int[,] matrix = new int[m, n];
 
-
-PrintArray(array);
+FillArray(matrix);
+PrintArray(matrix);

@@ -22,9 +22,9 @@ void PrintArray(double[,] matrix)
     }
 }
 Console.WriteLine("Введите количество строк: ");
-int m = int.Parse(Console.ReadLine());
+int m = int.Parse(Console.ReadLine() ?? "0");
 Console.WriteLine("Введите количество столбцов: ");
-int n = int.Parse(Console.ReadLine());;
+int n = int.Parse(Console.ReadLine()?? "0");
 double[,] matrix = new double [m, n];
 
 FillArray(matrix, m, n);
