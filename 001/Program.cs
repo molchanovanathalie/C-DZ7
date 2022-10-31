@@ -1,20 +1,31 @@
 ﻿// Показать двумерный массив размером m×n заполненный вещественными числами
 
-void PrintArray(double[,] array)
+void FillArray(double[,] matrix, int m, int n)                                          
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            array[i, j] = new Random().NextDouble();
-            Console.Write($"{array[i, j]} ");
+            matrix[i, j] = new Random().NextDouble();
+        }
+    }
+}
+void PrintArray(double[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j]} ");
         }
         Console.WriteLine();
     }
 }
-int m = 2;
-int n = 2;
-double[,] array = new double [m, n];
+Console.WriteLine("Введите количество строк: ");
+int m = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите количество столбцов: ");
+int n = int.Parse(Console.ReadLine());;
+double[,] matrix = new double [m, n];
 
-
-PrintArray(array);
+FillArray(matrix, m, n);
+PrintArray(matrix);
