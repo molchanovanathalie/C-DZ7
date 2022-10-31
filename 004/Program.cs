@@ -14,7 +14,7 @@ void FillArray(int[,] matrix, int m, int n)
 
 void PrintArray(int[,] matrix)
 {
-    for(int i = 0; j < matrix.GetLength(0); i++)
+    for(int i = 0; i < matrix.GetLength(0); i++)
     {
         for(int j = 0; j < matrix.GetLength(1); j++)
             Console.Write($"{matrix[i,j]}");
@@ -45,11 +45,11 @@ void PositionNum(int [,] matrix, int num)
 }
 
 Console.WriteLine("Введите количество строк: ");
-int m = int.Parse(Console.Readline());
+int m = int.Parse(Console.ReadLine() ?? "0");
 Console.WriteLine("Введите количество столбцов: ");
-int n = int.Parse(Console.Readline());
-Console.WriteLine("Введите искомок число: ");
-int num = int.Parse(Console.Readline());
+int n = int.Parse(Console.ReadLine() ?? "0");
+Console.WriteLine("Введите искомое число: ");
+int num = int.Parse(Console.ReadLine() ?? "0");
 
 int[,] matrix = new int[m,n];
 
