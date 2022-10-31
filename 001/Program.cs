@@ -6,13 +6,15 @@ void PrintArray(double[,] array)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
+            array[i, j] = new Random().NextDouble();
             Console.Write($"{array[i, j]} ");
         }
         Console.WriteLine();
     }
 }
-int m = 5;
-int n = 4;
+int m = 2;
+int n = 2;
 double[,] array = new double [m, n];
+
 
 PrintArray(array);
